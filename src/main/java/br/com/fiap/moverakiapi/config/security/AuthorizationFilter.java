@@ -25,7 +25,7 @@ public class AuthorizationFilter extends OncePerRequestFilter{
         if (header == null || header.isEmpty() || !header.startsWith("Bearer ")) 
         return ; 
         
-        var service = new TokenService();
+        TokenService service = new TokenService();
         String token = header.substring(7);
 
         if (service.validate(token)){

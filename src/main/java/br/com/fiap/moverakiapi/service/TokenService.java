@@ -33,7 +33,7 @@ public class TokenService {
         Optional<Usuario> optional = repository.findByEmail(email);
 
         if(optional.isEmpty()) return null;
-        var usuario = optional.get();
+        Usuario usuario = optional.get();
 
         Authentication authentication = 
             new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
